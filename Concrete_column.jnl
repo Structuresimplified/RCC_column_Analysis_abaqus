@@ -1,0 +1,1290 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-115.0, -115.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(115.0, -115.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(115.0, 115.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-115.0, 115.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-115.0, -115.0), 
+    point2=(115.0, -115.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(115.0, -115.0), 
+    point2=(115.0, 115.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(115.0, 115.0), 
+    point2=(-115.0, 115.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-115.0, 115.0), 
+    point2=(-115.0, -115.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -71.4261932373047, -137.784317016602), value=300.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Concrete_column', 
+    type=DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Concrete_column'].BaseSolidExtrude(depth=3000.0, 
+    sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=6000.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5900.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 100.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5900.0, 100.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 100.0), point2=
+    (0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    5900.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(5900.0, 0.0), 
+    point2=(5900.0, 100.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Sixteen_mm', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Sixteen_mm'].BaseWire(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Part(name='twenty_mm', objectToCopy=
+    mdb.models['Model-1'].parts['Sixteen_mm'])
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=6000.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(150.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], ))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(180.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(180.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    180.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(180.0, 0.0), point2=
+    (180.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(180.0, 180.0), 
+    point2=(0.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 180.0), point2=
+    (0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(60.0, 120.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(60.0, 120.0), 
+    point2=(0.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(60.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(60.0, 150.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[16], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[13], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[17], 
+    mdb.models['Model-1'].sketches['__profile__'].constraints[25]))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(60.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 120.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(60.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[19], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[18], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[18]))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[20], ))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 180.0), point1=(18.6854400634766, 162.84538269043))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], ))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(8.0, 180.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 172.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(68.0, 120.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 180.0), point2=
+    (68.0, 120.0))
+mdb.models['Model-1'].sketches['__profile__'].linearPattern(angle1=0.0, angle2=
+    270.0, geomList=(mdb.models['Model-1'].sketches['__profile__'].geometry[8], 
+    ), number1=1, number2=2, spacing1=600.0, spacing2=16.0, vertexList=())
+mdb.models['Model-1'].sketches['__profile__'].move(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], ), vector=(-8.0, 
+    8.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Stirrups_sixmm', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Stirrups_sixmm'].BaseWire(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Density(table=((7.85e-09, ), ))
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((210000.0, 0.3), ))
+mdb.models['Model-1'].materials['Steel'].Plastic(table=((250.0, 0.0), ))
+mdb.models['Model-1'].Material(name='Concrete')
+mdb.models['Model-1'].materials['Concrete'].Density(table=((2.4e-09, ), ))
+mdb.models['Model-1'].materials['Concrete'].Elastic(table=((29185.85215, 0.2), 
+    ))
+mdb.models['Model-1'].materials['Concrete'].ConcreteDamagedPlasticity(table=((
+    41.0, 0.1, 1.16, 0.6, 0.0), ))
+mdb.models['Model-1'].materials['Concrete'].concreteDamagedPlasticity.ConcreteCompressionHardening(
+    table=((9.126598237, 0.0), (11.37566243, 8.774e-05), (14.08393755, 
+    0.00019774), (14.3509049, 0.00020887), (14.61655598, 0.00022), (
+    17.17021533, 0.00033), (19.5900598, 0.00044), (21.87109557, 0.00055), (
+    24.00807721, 0.00066), (25.99549162, 0.00077), (27.82754076, 0.00088), (
+    29.49812297, 0.00099), (31.00081282, 0.0011), (32.32883942, 0.00121), (
+    33.47506281, 0.00132), (34.76395406, 0.00143), (35.39264074, 0.00154), (
+    35.84135861, 0.00165), (36.11038584, 0.00176), (36.2, 0.00187), (
+    36.19869761, 0.001925), (36.19479101, 0.00198), (36.18828189, 0.002035), (
+    36.17917305, 0.00209), (36.16746842, 0.002145), (36.15317304, 0.0022), (
+    36.13629306, 0.002255), (36.11683574, 0.00231), (36.09480942, 0.002365), (
+    36.07022355, 0.00242), (36.04308862, 0.002475), (36.01341623, 0.00253), (
+    35.98121898, 0.002585), (35.94651056, 0.00264), (35.90930565, 0.002695), (
+    35.86961996, 0.00275), (35.82747018, 0.002805), (35.78287397, 0.00286), (
+    35.73584997, 0.002915), (35.68641775, 0.00297), (35.63459778, 0.003025), (
+    35.58041144, 0.00308), (35.523881, 0.003135), (35.46502956, 0.00319), (
+    35.40388107, 0.003245), (35.34046026, 0.0033), (35.27479268, 0.003355), (
+    35.2069046, 0.00341), (35.13682306, 0.003465), (35.06457576, 0.00352), (
+    34.99019113, 0.003575), (34.91369821, 0.00363), (34.83512671, 0.003685), (
+    34.75450689, 0.00374), (34.67186961, 0.003795), (34.58724629, 0.00385), (
+    34.50066883, 0.003905), (34.41216963, 0.00396), (34.32178156, 0.004015), (
+    34.22953792, 0.00407), (34.1354724, 0.004125), (34.03961907, 0.00418), (
+    33.94201236, 0.004235), (33.84268699, 0.00429), (33.74167801, 0.004345), (
+    33.11235205, 0.00467), (28.41368852, 0.00667), (23.35528104, 0.00867), (
+    18.84378195, 0.01067), (15.1635981, 0.01267), (12.27665929, 0.01467), (
+    10.04098424, 0.01667), (8.308632668, 0.01867), (6.956515252, 0.02067), (
+    5.890253103, 0.02267), (5.039755621, 0.02467), (4.353483384, 0.02667), (
+    3.793506012, 0.02867), (3.331732701, 0.03067), (2.947171921, 0.03267), (
+    2.623976211, 0.03467), (2.350053835, 0.03667), (2.116080616, 0.03867), (
+    1.914792208, 0.04067), (1.740473046, 0.04267), (1.588583867, 0.04467), (
+    1.455487601, 0.04667), (1.338245676, 0.04867), (1.23446519, 0.05067), (
+    1.142183178, 0.05267), (1.059778173, 0.05467), (0.985902046, 0.05667), (
+    0.919427046, 0.05867), (0.859404316, 0.06067), (0.805031163, 0.06267), (
+    0.755625058, 0.06467), (0.710602822, 0.06667), (0.669463883, 0.06867), (
+    0.63177671, 0.07067), (0.597167755, 0.07267), (0.565312403, 0.07467), (
+    0.535927515, 0.07667), (0.508765261, 0.07867), (0.483607985, 0.08067), (
+    0.460263925, 0.08267), (0.438563615, 0.08467), (0.418356858, 0.08667), (
+    0.399510166, 0.08867), (0.381904587, 0.09067), (0.365433848, 0.09267), (
+    0.350002777, 0.09467), (0.335525945, 0.09667), (0.321926492, 0.09867), (
+    0.309135123, 0.10067), (0.297089233, 0.10267), (0.285732147, 0.10467), (
+    0.275012464, 0.10667), (0.264883477, 0.10867), (0.25530267, 0.11067), (
+    0.246231276, 0.11267), (0.237633889, 0.11467), (0.229478118, 0.11667), (
+    0.221734288, 0.11867), (0.214375171, 0.12067), (0.207375746, 0.12267), (
+    0.200712991, 0.12467), (0.194365694, 0.12667), (0.188314283, 0.12867), (
+    0.18254068, 0.13067), (0.177028165, 0.13267), (0.171761253, 0.13467), (
+    0.166725589, 0.13667), (0.161907853, 0.13867), (0.157295665, 0.14067), (
+    0.152877513, 0.14267), (0.148642678, 0.14467), (0.144581171, 0.14667), (
+    0.140683672, 0.14867), (0.136941478, 0.15067), (0.133346457, 0.15267), (
+    0.129891001, 0.15467), (0.126567985, 0.15667), (0.123370735, 0.15867), (
+    0.120292991, 0.16067), (0.117328875, 0.16267), (0.11447287, 0.16467), (
+    0.111719784, 0.16667), (0.109064738, 0.16867), (0.106503135, 0.17067), (
+    0.104030646, 0.17267), (0.101643187, 0.17467), (0.099336908, 0.17667), (
+    0.097108174, 0.17867), (0.094953548, 0.18067), (0.092869784, 0.18267), (
+    0.090853812, 0.18467)))
+mdb.models['Model-1'].materials['Concrete'].concreteDamagedPlasticity.ConcreteTensionStiffening(
+    table=((3.760402239, 0.0), (2.712774769, 0.00015), (1.987712774, 0.0003), (
+    1.501121512, 0.00045), (1.1798688, 0.0006), (0.967133361, 0.00075), (
+    0.822012579, 0.0009), (0.716856207, 0.00105), (0.634073795, 0.0012), (
+    0.563210261, 0.00135), (0.49857832, 0.0015), (0.437485991, 0.00165), (
+    0.378987727, 0.0018), (0.323051903, 0.00195), (0.27003763, 0.0021), (
+    0.220389148, 0.00225), (0.174475718, 0.0024), (0.139235718, 0.002525), (
+    0.106796922, 0.00265), (0.07713675, 0.002775), (0.050173622, 0.0029), (
+    0.025779873, 0.003025)))
+mdb.models['Model-1'].materials['Concrete'].concreteDamagedPlasticity.ConcreteCompressionDamage(
+    table=((0.0, 0.0), (0.0, 8.774e-05), (0.0, 0.00019774), (0.0, 0.00020887), 
+    (0.0, 0.00022), (0.0, 0.00033), (0.0, 0.00044), (0.0, 0.00055), (0.0, 
+    0.00066), (0.0, 0.00077), (0.0, 0.00088), (0.0, 0.00099), (0.0, 0.0011), (
+    0.0, 0.00121), (0.0, 0.00132), (0.0, 0.00143), (0.0, 0.00154), (0.0, 
+    0.00165), (0.0, 0.00176), (3.59775e-05, 0.00187), (0.000143895, 0.001925), 
+    (0.000323705, 0.00198), (0.00057533, 0.002035), (0.000898662, 0.00209), (
+    0.001293562, 0.002145), (0.00175986, 0.0022), (0.002297355, 0.002255), (
+    0.002905817, 0.00231), (0.003584985, 0.002365), (0.004334568, 0.00242), (
+    0.005154248, 0.002475), (0.006043675, 0.00253), (0.007002471, 0.002585), (
+    0.008030231, 0.00264), (0.00912652, 0.002695), (0.010290879, 0.00275), (
+    0.011522818, 0.002805), (0.012821824, 0.00286), (0.014187355, 0.002915), (
+    0.015618846, 0.00297), (0.017115706, 0.003025), (0.01867732, 0.00308), (
+    0.020303051, 0.003135), (0.021992236, 0.00319), (0.023744192, 0.003245), (
+    0.025558213, 0.0033), (0.027433574, 0.003355), (0.029369529, 0.00341), (
+    0.03136531, 0.003465), (0.033420135, 0.00352), (0.035533198, 0.003575), (
+    0.037703682, 0.00363), (0.039930749, 0.003685), (0.042213547, 0.00374), (
+    0.044551208, 0.003795), (0.04694285, 0.00385), (0.049387579, 0.003905), (
+    0.051884487, 0.00396), (0.054432654, 0.004015), (0.057031149, 0.00407), (
+    0.059679031, 0.004125), (0.062375349, 0.00418), (0.065119144, 0.004235), (
+    0.067909447, 0.00429), (0.085294142, 0.004345), (0.215091477, 0.00467), (
+    0.35482649, 0.00667), (0.479453537, 0.00867), (0.581116075, 0.01067), (
+    0.660865766, 0.01267), (0.722624745, 0.01467), (0.770479761, 0.01667), (
+    0.80783107, 0.01867), (0.837285826, 0.02067), (0.860780231, 0.02267), (
+    0.879738028, 0.02467), (0.895207016, 0.02667), (0.907963185, 0.02867), (
+    0.918586411, 0.03067), (0.927514469, 0.03267), (0.935081386, 0.03467), (
+    0.941544734, 0.03667), (0.947105188, 0.03867), (0.951920634, 0.04067), (
+    0.956116468, 0.04267), (0.95979316, 0.04467), (0.963031887, 0.04667), (
+    0.965898752, 0.04867), (0.968447978, 0.05067), (0.97072436, 0.05267), (
+    0.972765137, 0.05467), (0.974601463, 0.05667), (0.976259549, 0.05867), (
+    0.97776157, 0.06067), (0.97912638, 0.06267), (0.980370088, 0.06467), (
+    0.981506523, 0.06667), (0.982547605, 0.06867), (0.983503653, 0.07067), (
+    0.984383635, 0.07267), (0.985195373, 0.07467), (0.985945711, 0.07667), (
+    0.986640663, 0.07867), (0.987285527, 0.08067), (0.987884983, 0.08267), (
+    0.988443181, 0.08467), (0.988963808, 0.08667), (0.98945015, 0.08867), (
+    0.989905142, 0.09067), (0.990331415, 0.09267), (0.990731327, 0.09467), (
+    0.991107003, 0.09667), (0.991460356, 0.09867), (0.991793115, 0.10067), (
+    0.992106847, 0.10267), (0.992402971, 0.10467), (0.992682777, 0.10667), (
+    0.99294744, 0.10867), (0.993198031, 0.11067), (0.993435528, 0.11267), (
+    0.993660825, 0.11467), (0.993874743, 0.11667), (0.994078034, 0.11867), (
+    0.994271388, 0.12067), (0.994455442, 0.12267), (0.994630782, 0.12467), (
+    0.994797948, 0.12667), (0.99495744, 0.12867), (0.995109719, 0.13067), (
+    0.995255214, 0.13267), (0.995394321, 0.13467), (0.995527407, 0.13667), (
+    0.995654816, 0.13867), (0.995776864, 0.14067), (0.995893849, 0.14267), (
+    0.996006045, 0.14467), (0.996113711, 0.14667), (0.996217086, 0.14867), (
+    0.996316396, 0.15067), (0.996411851, 0.15267), (0.996503647, 0.15467), (
+    0.996591969, 0.15667), (0.996676989, 0.15867), (0.996758871, 0.16067), (
+    0.996837766, 0.16267), (0.996913818, 0.16467), (0.996987162, 0.16667), (
+    0.997057924, 0.16867), (0.997126225, 0.17067), (0.997192177, 0.17267), (
+    0.997255887, 0.17467), (0.997317454, 0.17667), (0.997376974, 0.17867), (
+    0.997434536, 0.18067), (0.997490226, 0.18267), (0.997544124, 0.18467)))
+mdb.models['Model-1'].materials['Concrete'].concreteDamagedPlasticity.ConcreteTensionDamage(
+    table=((0.0, 0.0), (0.278594524, 0.00015), (0.471409533, 0.0003), (
+    0.60080826, 0.00045), (0.686238672, 0.0006), (0.742811194, 0.00075), (
+    0.781403018, 0.0009), (0.809367147, 0.00105), (0.831381391, 0.0012), (
+    0.85022606, 0.00135), (0.867413567, 0.0015), (0.883659789, 0.00165), (
+    0.899216174, 0.0018), (0.914091131, 0.00195), (0.928189164, 0.0021), (
+    0.941392135, 0.00225), (0.953601847, 0.0024), (0.962973185, 0.002525), (
+    0.971599601, 0.00265), (0.979487101, 0.002775), (0.986657379, 0.0029), (
+    0.993144384, 0.003025)))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Concrete', name=
+    'Concrete', thickness=None)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Steel', name='Steel', 
+    thickness=None)
+mdb.models['Model-1'].parts['Concrete_column'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=Region(
+    cells=mdb.models['Model-1'].parts['Concrete_column'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )), sectionName='Concrete', thicknessAssignment=
+    FROM_SECTION)
+del mdb.models['Model-1'].sections['Steel']
+mdb.models['Model-1'].TrussSection(area=201.0, material='Steel', name='Steel')
+mdb.models['Model-1'].sections.changeKey(fromName='Steel', toName=
+    'Steel_sixteen')
+mdb.models['Model-1'].TrussSection(area=314.159, material='Steel', name=
+    'Steel_twenty')
+mdb.models['Model-1'].TrussSection(area=28.274, material='Steel', name=
+    'Steel_six')
+mdb.models['Model-1'].parts['Sixteen_mm'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=Region(
+    edges=mdb.models['Model-1'].parts['Sixteen_mm'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )), sectionName='Steel_sixteen', thicknessAssignment=
+    FROM_SECTION)
+mdb.models['Model-1'].parts['Stirrups_sixmm'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=Region(
+    edges=mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )), sectionName='Steel_six', thicknessAssignment=
+    FROM_SECTION)
+mdb.models['Model-1'].parts['twenty_mm'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=Region(
+    edges=mdb.models['Model-1'].parts['twenty_mm'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )), sectionName='Steel_twenty', thicknessAssignment=
+    FROM_SECTION)
+mdb.models['Model-1'].parts['Sixteen_mm'].assignBeamSectionOrientation(method=
+    N1_COSINES, n1=(0.0, 0.0, -1.0), region=Region(
+    edges=mdb.models['Model-1'].parts['Sixteen_mm'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )))
+mdb.models['Model-1'].parts['Stirrups_sixmm'].assignBeamSectionOrientation(
+    method=N1_COSINES, n1=(0.0, 0.0, -1.0), region=Region(
+    edges=mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )))
+mdb.models['Model-1'].parts['twenty_mm'].assignBeamSectionOrientation(method=
+    N1_COSINES, n1=(0.0, 0.0, -1.0), region=Region(
+    edges=mdb.models['Model-1'].parts['twenty_mm'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )))
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'Concrete_column-1', part=mdb.models['Model-1'].parts['Concrete_column'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Sixteen_mm-1', 
+    part=mdb.models['Model-1'].parts['Sixteen_mm'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'Stirrups_sixmm-1', part=mdb.models['Model-1'].parts['Stirrups_sixmm'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='twenty_mm-1', 
+    part=mdb.models['Model-1'].parts['twenty_mm'])
+mdb.models['Model-1'].rootAssembly.instances['Sixteen_mm-1'].translate(vector=(
+    705.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1'].translate(
+    vector=(6623.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['twenty_mm-1'].translate(vector=(
+    7393.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.LinearInstancePattern(direction1=(1.0, 0.0, 
+    0.0), direction2=(0.0, 0.0, 1.0), instanceList=('Sixteen_mm-1', ), number1=
+    1, number2=2, spacing1=5900.0, spacing2=180.0)
+mdb.models['Model-1'].rootAssembly.rotate(angle=180.0, axisDirection=(5900.0, 
+    0.0, 0.0), axisPoint=(7393.0, 0.0, 0.0), instanceList=('twenty_mm-1', ))
+mdb.models['Model-1'].rootAssembly.LinearInstancePattern(direction1=(0.0, 0.0, 
+    1.0), direction2=(0.0, 1.0, 0.0), instanceList=('twenty_mm-1', ), number1=2
+    , number2=1, spacing1=180.0, spacing2=100.0)
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('twenty_mm-1', 
+    'twenty_mm-1-lin-2-1'), vector=(-6688.0, 180.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(4.0, 
+    180.0, 0.0), axisPoint=(6713.0, 0.0, 0.0), instanceList=(
+    'Stirrups_sixmm-1', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Stirrups_sixmm-1', 
+    ), vector=(-112.042448, -1.910168, 85.978773))
+del mdb.models['Model-1'].rootAssembly.features['Stirrups_sixmm-1']
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'Stirrups_sixmm-1', part=mdb.models['Model-1'].parts['Stirrups_sixmm'])
+mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1'].translate(
+    vector=(6623.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(4.0, 
+    180.0, 0.0), axisPoint=(6713.0, 0.0, 0.0), instanceList=(
+    'Stirrups_sixmm-1', ))
+del mdb.models['Model-1'].rootAssembly.features['Stirrups_sixmm-1']
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'Stirrups_sixmm-1', part=mdb.models['Model-1'].parts['Stirrups_sixmm'])
+mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1'].translate(
+    vector=(6623.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.0, 
+    180.0, 0.0), axisPoint=(6803.0, 0.0, 0.0), instanceList=(
+    'Stirrups_sixmm-1', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Stirrups_sixmm-1', 
+    ), vector=(-198.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.LinearInstancePattern(direction1=(-1.0, 0.0, 
+    0.0), direction2=(0.0, 1.0, 0.0), instanceList=('Stirrups_sixmm-1', ), 
+    number1=41, number2=1, spacing1=150.0, spacing2=180.0)
+mdb.models['Model-1'].rootAssembly.translate(instanceList=(
+    'Stirrups_sixmm-1-lin-41-1', ), vector=(100.0, 0.0, 0.0))
+del mdb.models['Model-1'].rootAssembly.features['Concrete_column-1']
+mdb.models['Model-1'].parts['Concrete_column'].features['Solid extrude-1'].setValues(
+    depth=6000.0)
+mdb.models['Model-1'].parts['Concrete_column'].regenerate()
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'Concrete_column-1', part=mdb.models['Model-1'].parts['Concrete_column'])
+mdb.models['Model-1'].rootAssembly.instances['Concrete_column-1'].translate(
+    vector=(6743.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(230.0, 
+    0.0, 0.0), axisPoint=(6628.0, 0.0, 0.0), instanceList=('Concrete_column-1', 
+    ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Concrete_column-1', 
+    ), vector=(-6858.0, 6000.0, 115.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.0, 0.0, 
+    -180.0), axisPoint=(705.0, 0.0, 180.0), instanceList=('Sixteen_mm-1', 
+    'twenty_mm-1', 'Sixteen_mm-1-lin-1-2', 'twenty_mm-1-lin-2-1', 
+    'Stirrups_sixmm-1', 'Stirrups_sixmm-1-lin-2-1', 'Stirrups_sixmm-1-lin-3-1', 
+    'Stirrups_sixmm-1-lin-4-1', 'Stirrups_sixmm-1-lin-5-1', 
+    'Stirrups_sixmm-1-lin-6-1', 'Stirrups_sixmm-1-lin-7-1', 
+    'Stirrups_sixmm-1-lin-8-1', 'Stirrups_sixmm-1-lin-9-1', 
+    'Stirrups_sixmm-1-lin-10-1', 'Stirrups_sixmm-1-lin-11-1', 
+    'Stirrups_sixmm-1-lin-12-1', 'Stirrups_sixmm-1-lin-13-1', 
+    'Stirrups_sixmm-1-lin-14-1', 'Stirrups_sixmm-1-lin-15-1', 
+    'Stirrups_sixmm-1-lin-16-1', 'Stirrups_sixmm-1-lin-17-1', 
+    'Stirrups_sixmm-1-lin-18-1', 'Stirrups_sixmm-1-lin-19-1', 
+    'Stirrups_sixmm-1-lin-20-1', 'Stirrups_sixmm-1-lin-21-1', 
+    'Stirrups_sixmm-1-lin-22-1', 'Stirrups_sixmm-1-lin-23-1', 
+    'Stirrups_sixmm-1-lin-24-1', 'Stirrups_sixmm-1-lin-25-1', 
+    'Stirrups_sixmm-1-lin-26-1', 'Stirrups_sixmm-1-lin-27-1', 
+    'Stirrups_sixmm-1-lin-28-1', 'Stirrups_sixmm-1-lin-29-1', 
+    'Stirrups_sixmm-1-lin-30-1', 'Stirrups_sixmm-1-lin-31-1', 
+    'Stirrups_sixmm-1-lin-32-1', 'Stirrups_sixmm-1-lin-33-1', 
+    'Stirrups_sixmm-1-lin-34-1', 'Stirrups_sixmm-1-lin-35-1', 
+    'Stirrups_sixmm-1-lin-36-1', 'Stirrups_sixmm-1-lin-37-1', 
+    'Stirrups_sixmm-1-lin-38-1', 'Stirrups_sixmm-1-lin-39-1', 
+    'Stirrups_sixmm-1-lin-40-1', 'Stirrups_sixmm-1-lin-41-1'))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Sixteen_mm-1', 
+    'twenty_mm-1', 'Sixteen_mm-1-lin-1-2', 'twenty_mm-1-lin-2-1', 
+    'Stirrups_sixmm-1', 'Stirrups_sixmm-1-lin-2-1', 'Stirrups_sixmm-1-lin-3-1', 
+    'Stirrups_sixmm-1-lin-4-1', 'Stirrups_sixmm-1-lin-5-1', 
+    'Stirrups_sixmm-1-lin-6-1', 'Stirrups_sixmm-1-lin-7-1', 
+    'Stirrups_sixmm-1-lin-8-1', 'Stirrups_sixmm-1-lin-9-1', 
+    'Stirrups_sixmm-1-lin-10-1', 'Stirrups_sixmm-1-lin-11-1', 
+    'Stirrups_sixmm-1-lin-12-1', 'Stirrups_sixmm-1-lin-13-1', 
+    'Stirrups_sixmm-1-lin-14-1', 'Stirrups_sixmm-1-lin-15-1', 
+    'Stirrups_sixmm-1-lin-16-1', 'Stirrups_sixmm-1-lin-17-1', 
+    'Stirrups_sixmm-1-lin-18-1', 'Stirrups_sixmm-1-lin-19-1', 
+    'Stirrups_sixmm-1-lin-20-1', 'Stirrups_sixmm-1-lin-21-1', 
+    'Stirrups_sixmm-1-lin-22-1', 'Stirrups_sixmm-1-lin-23-1', 
+    'Stirrups_sixmm-1-lin-24-1', 'Stirrups_sixmm-1-lin-25-1', 
+    'Stirrups_sixmm-1-lin-26-1', 'Stirrups_sixmm-1-lin-27-1', 
+    'Stirrups_sixmm-1-lin-28-1', 'Stirrups_sixmm-1-lin-29-1', 
+    'Stirrups_sixmm-1-lin-30-1', 'Stirrups_sixmm-1-lin-31-1', 
+    'Stirrups_sixmm-1-lin-32-1', 'Stirrups_sixmm-1-lin-33-1', 
+    'Stirrups_sixmm-1-lin-34-1', 'Stirrups_sixmm-1-lin-35-1', 
+    'Stirrups_sixmm-1-lin-36-1', 'Stirrups_sixmm-1-lin-37-1', 
+    'Stirrups_sixmm-1-lin-38-1', 'Stirrups_sixmm-1-lin-39-1', 
+    'Stirrups_sixmm-1-lin-40-1', 'Stirrups_sixmm-1-lin-41-1'), vector=(-910.0, 
+    5950.0, 25.0))
+mdb.models['Model-1'].StaticStep(initialInc=0.01, maxInc=0.05, name=
+    'Static_Load', nlgeom=ON, previous='Initial')
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Sixteen_mm-1', 
+    'twenty_mm-1', 'Sixteen_mm-1-lin-1-2', 'twenty_mm-1-lin-2-1', 
+    'Stirrups_sixmm-1', 'Stirrups_sixmm-1-lin-2-1', 'Stirrups_sixmm-1-lin-3-1', 
+    'Stirrups_sixmm-1-lin-4-1', 'Stirrups_sixmm-1-lin-5-1', 
+    'Stirrups_sixmm-1-lin-6-1', 'Stirrups_sixmm-1-lin-7-1', 
+    'Stirrups_sixmm-1-lin-8-1', 'Stirrups_sixmm-1-lin-9-1', 
+    'Stirrups_sixmm-1-lin-10-1', 'Stirrups_sixmm-1-lin-11-1', 
+    'Stirrups_sixmm-1-lin-12-1', 'Stirrups_sixmm-1-lin-13-1', 
+    'Stirrups_sixmm-1-lin-14-1', 'Stirrups_sixmm-1-lin-15-1', 
+    'Stirrups_sixmm-1-lin-16-1', 'Stirrups_sixmm-1-lin-17-1', 
+    'Stirrups_sixmm-1-lin-18-1', 'Stirrups_sixmm-1-lin-19-1', 
+    'Stirrups_sixmm-1-lin-20-1', 'Stirrups_sixmm-1-lin-21-1', 
+    'Stirrups_sixmm-1-lin-22-1', 'Stirrups_sixmm-1-lin-23-1', 
+    'Stirrups_sixmm-1-lin-24-1', 'Stirrups_sixmm-1-lin-25-1', 
+    'Stirrups_sixmm-1-lin-26-1', 'Stirrups_sixmm-1-lin-27-1', 
+    'Stirrups_sixmm-1-lin-28-1', 'Stirrups_sixmm-1-lin-29-1', 
+    'Stirrups_sixmm-1-lin-30-1', 'Stirrups_sixmm-1-lin-31-1', 
+    'Stirrups_sixmm-1-lin-32-1', 'Stirrups_sixmm-1-lin-33-1', 
+    'Stirrups_sixmm-1-lin-34-1', 'Stirrups_sixmm-1-lin-35-1', 
+    'Stirrups_sixmm-1-lin-36-1', 'Stirrups_sixmm-1-lin-37-1', 
+    'Stirrups_sixmm-1-lin-38-1', 'Stirrups_sixmm-1-lin-39-1', 
+    'Stirrups_sixmm-1-lin-40-1', 'Stirrups_sixmm-1-lin-41-1', 
+    'Concrete_column-1'), vector=(230.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=(115.0, -1.0, 115.0))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=(115.0, 6001.0, 115.0))
+mdb.models['Model-1'].MultipointConstraint(controlPoint=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[100], 
+    )), csys=None, mpcType=BEAM_MPC, name='Constraint-1', surface=Region(
+    faces=mdb.models['Model-1'].rootAssembly.instances['Concrete_column-1'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )), userMode=DOF_MODE_MPC, userType=0)
+mdb.models['Model-1'].MultipointConstraint(controlPoint=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[101], 
+    )), csys=None, mpcType=BEAM_MPC, name='Constraint-2', surface=Region(
+    faces=mdb.models['Model-1'].rootAssembly.instances['Concrete_column-1'].faces.getSequenceFromMask(
+    mask=('[#20 ]', ), )), userMode=DOF_MODE_MPC, userType=0)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[100], )), u1=SET, u2=SET
+    , u3=SET, ur1=UNSET, ur2=SET, ur3=SET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-2', 
+    region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[101], )), u1=SET, u2=
+    UNSET, u3=SET, ur1=UNSET, ur2=SET, ur3=SET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Static_Load', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='BC-3', region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[101], )), u1=UNSET, u2=
+    -50.0, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].EmbeddedRegion(absoluteTolerance=0.0, embeddedRegion=
+    Region(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Sixteen_mm-1'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['twenty_mm-1'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Sixteen_mm-1-lin-1-2'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['twenty_mm-1-lin-2-1'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-2-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-3-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-4-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-5-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-6-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-7-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-8-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-9-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-10-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-11-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-12-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-13-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-14-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-15-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-16-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-17-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-18-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-19-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-20-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-21-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-22-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-23-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-24-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-25-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-26-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-27-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-28-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-29-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-30-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-31-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-32-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-33-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-34-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-35-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-36-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-37-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-38-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-39-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-40-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Stirrups_sixmm-1-lin-41-1'].edges.getSequenceFromMask(
+    mask=('[#ff ]', ), )), fractionalTolerance=0.05, hostRegion=Region(
+    cells=mdb.models['Model-1'].rootAssembly.instances['Concrete_column-1'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )), name='Constraint-3', toleranceMethod=BOTH, 
+    weightFactorTolerance=1e-06)
+mdb.models['Model-1'].parts['Concrete_column'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Concrete_column'].edges.getSequenceFromMask((
+    '[#fff ]', ), ), size=46.0)
+mdb.models['Model-1'].parts['Concrete_column'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Concrete_column'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), ))
+mdb.models['Model-1'].parts['Concrete_column'].generateMesh(regions=
+    mdb.models['Model-1'].parts['Concrete_column'].cells.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['Model-1'].parts['Sixteen_mm'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Sixteen_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ), size=46.0)
+mdb.models['Model-1'].parts['Sixteen_mm'].setElementType(elemTypes=(ElemType(
+    elemCode=T3D2, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].parts['Sixteen_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ), ))
+mdb.models['Model-1'].parts['Sixteen_mm'].generateMesh(regions=
+    mdb.models['Model-1'].parts['Sixteen_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ))
+mdb.models['Model-1'].parts['twenty_mm'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['twenty_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ), size=46.0)
+mdb.models['Model-1'].parts['twenty_mm'].setElementType(elemTypes=(ElemType(
+    elemCode=T3D2, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].parts['twenty_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ), ))
+mdb.models['Model-1'].parts['twenty_mm'].generateMesh(regions=
+    mdb.models['Model-1'].parts['twenty_mm'].edges.getSequenceFromMask((
+    '[#7 ]', ), ))
+mdb.models['Model-1'].parts['Stirrups_sixmm'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask((
+    '[#ff ]', ), ), size=46.0)
+mdb.models['Model-1'].parts['Stirrups_sixmm'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask((
+    '[#ff ]', ), ), size=23.0)
+mdb.models['Model-1'].parts['Stirrups_sixmm'].setElementType(elemTypes=(
+    ElemType(elemCode=T3D2, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask((
+    '[#ff ]', ), ), ))
+mdb.models['Model-1'].parts['Stirrups_sixmm'].generateMesh(regions=
+    mdb.models['Model-1'].parts['Stirrups_sixmm'].edges.getSequenceFromMask((
+    '[#ff ]', ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='RCC_Column_capacity', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['RCC_Column_capacity'].submit(consistencyChecking=OFF, datacheckJob=
+    True)
+mdb.jobs['RCC_Column_capacity']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '17PHD0221-SCALE', 'handle': 0, 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THE OPTION *CONCRETE COMPRESSION HARDENING, STRESS VALUES SMALLER THAN THE MINIMUM (1.00000E-02 TIMES THE STRESS AT INITIAL YIELD) HAVE BEEN SPECIFIED. THE MINIMUM VALUE WILL BE ASSUMED.', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THE OPTION *CONCRETE TENSION STIFFENING, STRESS VALUES SMALLER THAN THE MINIMUM (1.00000E-02 TIMES THE INITIAL FAILURE STRESS) HAVE BEEN SPECIFIED. THE MINIMUM VALUE WILL BE ASSUMED.', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\raksh\\RCC_Column_capacity.odb', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '17PHD0221-SCALE', 'handle': 8448, 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 0, 'timeIncrement': 0.01, 'increment': 0, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['RCC_Column_capacity']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'RCC_Column_capacity', 'memory': 85.0})
+mdb.jobs['RCC_Column_capacity']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(JOB_COMPLETED, {
+    'time': 'Mon Sep 19 15:22:57 2022', 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity'].submit(consistencyChecking=OFF, continueJob=
+    True)
+mdb.jobs['RCC_Column_capacity']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '17PHD0221-SCALE', 'handle': 11376, 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'RCC_Column_capacity', 
+    'memory': 132.0})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.035, 
+    'attempts': 1, 'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.0575, 
+    'attempts': 1, 'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': 1, 'timeIncrement': 0.03375, 'increment': 5, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.14125, 
+    'attempts': 1, 'timeIncrement': 0.05, 'increment': 6, 'stepTime': 0.14125, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.19125, 
+    'attempts': 1, 'timeIncrement': 0.05, 'increment': 7, 'stepTime': 0.19125, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.24125, 
+    'attempts': 1, 'timeIncrement': 0.05, 'increment': 8, 'stepTime': 0.24125, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.29125, 
+    'attempts': 1, 'timeIncrement': 0.05, 'increment': 9, 'stepTime': 0.29125, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 10, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.34125, 
+    'attempts': 1, 'timeIncrement': 0.05, 'increment': 10, 'stepTime': 0.34125, 
+    'step': 1, 'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 216 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT IS SO LARGE THAT THE PROGRAM WILL NOT ATTEMPT THE PLASTICITY CALCULATION AT 3 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'EXCESSIVE DISTORTION AT A TOTAL OF 1353 INTEGRATION POINTS IN SOLID (CONTINUUM) ELEMENTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.34125, 
+    'attempts': ' 1U', 'timeIncrement': 0.05, 'increment': 11, 
+    'stepTime': 0.34125, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.34125, 
+    'attempts': ' 2U', 'timeIncrement': 0.0125, 'increment': 11, 
+    'stepTime': 0.34125, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 7, 'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 11, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.344375, 
+    'attempts': 3, 'timeIncrement': 0.003125, 'increment': 11, 
+    'stepTime': 0.344375, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 10, 'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 12, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3475, 
+    'attempts': 1, 'timeIncrement': 0.003125, 'increment': 12, 
+    'stepTime': 0.3475, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT IS SO LARGE THAT THE PROGRAM WILL NOT ATTEMPT THE PLASTICITY CALCULATION AT 431 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE PLASTICITY/CREEP/CONNECTOR FRICTION ALGORITHM DID NOT CONVERGE AT 222 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'EXCESSIVE DISTORTION AT A TOTAL OF 5 INTEGRATION POINTS IN SOLID (CONTINUUM) ELEMENTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3475, 
+    'attempts': ' 1U', 'timeIncrement': 0.003125, 'increment': 13, 
+    'stepTime': 0.3475, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 13, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.34828125, 
+    'attempts': 2, 'timeIncrement': 0.00078125, 'increment': 13, 
+    'stepTime': 0.34828125, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 14, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3490625, 
+    'attempts': 1, 'timeIncrement': 0.00078125, 'increment': 14, 
+    'stepTime': 0.3490625, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 15, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.350234375, 
+    'attempts': 1, 'timeIncrement': 0.001171875, 'increment': 15, 
+    'stepTime': 0.350234375, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 16, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3519921875, 
+    'attempts': 1, 'timeIncrement': 0.0017578125, 'increment': 16, 
+    'stepTime': 0.3519921875, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 17, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.35462890625, 
+    'attempts': 1, 'timeIncrement': 0.00263671875, 'increment': 17, 
+    'stepTime': 0.35462890625, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 18, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.358583984375, 
+    'attempts': 1, 'timeIncrement': 0.003955078125, 'increment': 18, 
+    'stepTime': 0.358583984375, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 19, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3645166015625, 
+    'attempts': 1, 'timeIncrement': 0.0059326171875, 'increment': 19, 
+    'stepTime': 0.3645166015625, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.3645166015625, 
+    'attempts': ' 1U', 'timeIncrement': 0.0059326171875, 'increment': 20, 
+    'stepTime': 0.3645166015625, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 7, 'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 20, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.365999755859375, 'attempts': 2, 
+    'timeIncrement': 0.001483154296875, 'increment': 20, 
+    'stepTime': 0.365999755859375, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 21, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.36748291015625, 'attempts': 1, 
+    'timeIncrement': 0.001483154296875, 'increment': 21, 
+    'stepTime': 0.36748291015625, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 22, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.368966064453125, 'attempts': 1, 
+    'timeIncrement': 0.001483154296875, 'increment': 22, 
+    'stepTime': 0.368966064453125, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 23, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.37044921875, 
+    'attempts': 1, 'timeIncrement': 0.001483154296875, 'increment': 23, 
+    'stepTime': 0.37044921875, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {'totalTime': 0.37044921875, 
+    'attempts': ' 1U', 'timeIncrement': 0.001483154296875, 'increment': 24, 
+    'stepTime': 0.37044921875, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 24, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.370820007324219, 'attempts': 2, 
+    'timeIncrement': 0.00037078857421875, 'increment': 24, 
+    'stepTime': 0.370820007324219, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 25, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.371190795898437, 'attempts': 1, 
+    'timeIncrement': 0.00037078857421875, 'increment': 25, 
+    'stepTime': 0.371190795898437, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 26, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.371746978759766, 'attempts': 1, 
+    'timeIncrement': 0.000556182861328125, 'increment': 26, 
+    'stepTime': 0.371746978759766, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 27, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.372581253051758, 'attempts': 1, 
+    'timeIncrement': 0.000834274291992188, 'increment': 27, 
+    'stepTime': 0.372581253051758, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 28, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.373832664489746, 'attempts': 1, 
+    'timeIncrement': 0.00125141143798828, 'increment': 28, 
+    'stepTime': 0.373832664489746, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 29, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.375709781646728, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 29, 
+    'stepTime': 0.375709781646728, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 30, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.377586898803711, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 30, 
+    'stepTime': 0.377586898803711, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 31, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.379464015960693, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 31, 
+    'stepTime': 0.379464015960693, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 7, 'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 32, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.381341133117676, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 32, 
+    'stepTime': 0.381341133117676, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 33, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.383218250274658, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 33, 
+    'stepTime': 0.383218250274658, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 34, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.385095367431641, 'attempts': 1, 
+    'timeIncrement': 0.00187711715698242, 'increment': 34, 
+    'stepTime': 0.385095367431641, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 35, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.387911043167114, 'attempts': 1, 
+    'timeIncrement': 0.00281567573547363, 'increment': 35, 
+    'stepTime': 0.387911043167114, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 36, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.392134556770325, 'attempts': 1, 
+    'timeIncrement': 0.00422351360321045, 'increment': 36, 
+    'stepTime': 0.392134556770325, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 37, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.39846982717514, 'attempts': 1, 
+    'timeIncrement': 0.00633527040481567, 'increment': 37, 
+    'stepTime': 0.39846982717514, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.39846982717514, 'attempts': ' 1U', 
+    'timeIncrement': 0.00950290560722351, 'increment': 38, 
+    'stepTime': 0.39846982717514, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 38, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.400845553576946, 'attempts': 2, 
+    'timeIncrement': 0.00237572640180588, 'increment': 38, 
+    'stepTime': 0.400845553576946, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.400845553576946, 'attempts': ' 1U', 
+    'timeIncrement': 0.00356358960270882, 'increment': 39, 
+    'stepTime': 0.400845553576946, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 39, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.401736450977623, 'attempts': 2, 
+    'timeIncrement': 0.000890897400677204, 'increment': 39, 
+    'stepTime': 0.401736450977623, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.401736450977623, 'attempts': ' 1U', 
+    'timeIncrement': 0.00133634610101581, 'increment': 40, 
+    'stepTime': 0.401736450977623, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 8, 'phase': STANDARD_PHASE, 'equilibrium': 8})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 40, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.402070537502877, 'attempts': 2, 
+    'timeIncrement': 0.000334086525253952, 'increment': 40, 
+    'stepTime': 0.402070537502877, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 41, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.402571667290758, 'attempts': 1, 
+    'timeIncrement': 0.000501129787880927, 'increment': 41, 
+    'stepTime': 0.402571667290758, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 42, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.40332336197258, 'attempts': 1, 
+    'timeIncrement': 0.000751694681821391, 'increment': 42, 
+    'stepTime': 0.40332336197258, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 43, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.404450903995312, 'attempts': 1, 
+    'timeIncrement': 0.00112754202273209, 'increment': 43, 
+    'stepTime': 0.404450903995312, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 44, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.40614221702941, 'attempts': 1, 
+    'timeIncrement': 0.00169131303409813, 'increment': 44, 
+    'stepTime': 0.40614221702941, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 45, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.408679186580557, 'attempts': 1, 
+    'timeIncrement': 0.00253696955114719, 'increment': 45, 
+    'stepTime': 0.408679186580557, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.408679186580557, 'attempts': ' 1U', 
+    'timeIncrement': 0.00380545432672079, 'increment': 46, 
+    'stepTime': 0.408679186580557, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 46, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.409630550162237, 'attempts': 2, 
+    'timeIncrement': 0.000951363581680198, 'increment': 46, 
+    'stepTime': 0.409630550162237, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 47, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.411057595534758, 'attempts': 1, 
+    'timeIncrement': 0.0014270453725203, 'increment': 47, 
+    'stepTime': 0.411057595534758, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.411057595534758, 'attempts': ' 1U', 
+    'timeIncrement': 0.00214056805878045, 'increment': 48, 
+    'stepTime': 0.411057595534758, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 48, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.411592737549453, 'attempts': 2, 
+    'timeIncrement': 0.000535142014695111, 'increment': 48, 
+    'stepTime': 0.411592737549453, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.411592737549453, 'attempts': ' 1U', 
+    'timeIncrement': 0.000802713022042667, 'increment': 49, 
+    'stepTime': 0.411592737549453, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 49, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.411793415804963, 'attempts': 2, 
+    'timeIncrement': 0.000200678255510667, 'increment': 49, 
+    'stepTime': 0.411793415804963, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 50, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.412094433188229, 'attempts': 1, 
+    'timeIncrement': 0.000301017383266, 'increment': 50, 
+    'stepTime': 0.412094433188229, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 51, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.412545959263128, 'attempts': 1, 
+    'timeIncrement': 0.000451526074899, 'increment': 51, 
+    'stepTime': 0.412545959263128, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 52, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.413223248375477, 'attempts': 1, 
+    'timeIncrement': 0.0006772891123485, 'increment': 52, 
+    'stepTime': 0.413223248375477, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.413223248375477, 'attempts': ' 1U', 
+    'timeIncrement': 0.00101593366852275, 'increment': 53, 
+    'stepTime': 0.413223248375477, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 53, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.413477231792608, 'attempts': 2, 
+    'timeIncrement': 0.000253983417130688, 'increment': 53, 
+    'stepTime': 0.413477231792608, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 54, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.413858206918304, 'attempts': 1, 
+    'timeIncrement': 0.000380975125696031, 'increment': 54, 
+    'stepTime': 0.413858206918304, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 55, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.414429669606848, 'attempts': 1, 
+    'timeIncrement': 0.000571462688544047, 'increment': 55, 
+    'stepTime': 0.414429669606848, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 56, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.415001132295392, 'attempts': 1, 
+    'timeIncrement': 0.000571462688544047, 'increment': 56, 
+    'stepTime': 0.415001132295392, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 57, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.415572594983936, 'attempts': 1, 
+    'timeIncrement': 0.000571462688544047, 'increment': 57, 
+    'stepTime': 0.415572594983936, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 58, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.416429789016752, 'attempts': 1, 
+    'timeIncrement': 0.000857194032816071, 'increment': 58, 
+    'stepTime': 0.416429789016752, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 59, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.417715580065976, 'attempts': 1, 
+    'timeIncrement': 0.00128579104922411, 'increment': 59, 
+    'stepTime': 0.417715580065976, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 60, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.419644266639812, 'attempts': 1, 
+    'timeIncrement': 0.00192868657383616, 'increment': 60, 
+    'stepTime': 0.419644266639812, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 61, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.422537296500566, 'attempts': 1, 
+    'timeIncrement': 0.00289302986075424, 'increment': 61, 
+    'stepTime': 0.422537296500566, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.422537296500566, 'attempts': ' 1U', 
+    'timeIncrement': 0.00433954479113136, 'increment': 62, 
+    'stepTime': 0.422537296500566, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 62, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.423622182698349, 'attempts': 2, 
+    'timeIncrement': 0.00108488619778284, 'increment': 62, 
+    'stepTime': 0.423622182698349, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 63, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.425249511995023, 'attempts': 1, 
+    'timeIncrement': 0.00162732929667426, 'increment': 63, 
+    'stepTime': 0.425249511995023, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 64, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427690505940035, 'attempts': 1, 
+    'timeIncrement': 0.00244099394501139, 'increment': 64, 
+    'stepTime': 0.427690505940035, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 15 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT IS SO LARGE THAT THE PROGRAM WILL NOT ATTEMPT THE PLASTICITY CALCULATION AT 1 POINTS', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427690505940035, 'attempts': ' 1U', 
+    'timeIncrement': 0.00366149091751708, 'increment': 65, 
+    'stepTime': 0.427690505940035, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427690505940035, 'attempts': ' 2U', 
+    'timeIncrement': 0.000915372729379271, 'increment': 65, 
+    'stepTime': 0.427690505940035, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427690505940035, 'attempts': ' 3U', 
+    'timeIncrement': 0.000228843182344818, 'increment': 65, 
+    'stepTime': 0.427690505940035, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 65, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427747716735621, 'attempts': 4, 
+    'timeIncrement': 5.72107955862044e-05, 'increment': 65, 
+    'stepTime': 0.427747716735621, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 66, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427804927531207, 'attempts': 1, 
+    'timeIncrement': 5.72107955862044e-05, 'increment': 66, 
+    'stepTime': 0.427804927531207, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427804927531207, 'attempts': ' 1U', 
+    'timeIncrement': 5.72107955862044e-05, 'increment': 67, 
+    'stepTime': 0.427804927531207, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427804927531207, 'attempts': ' 2U', 
+    'timeIncrement': 1.43026988965511e-05, 'increment': 67, 
+    'stepTime': 0.427804927531207, 'step': 1, 'jobName': 'RCC_Column_capacity', 
+    'severe': 0, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Time increment required is less than the minimum specified', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427804927531207, 'attempts': ' 3U', 'timeIncrement': 1e-05, 
+    'increment': 67, 'stepTime': 0.427804927531207, 'step': 1, 
+    'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['RCC_Column_capacity']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 67, 'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(STATUS, {
+    'totalTime': 0.427804927531207, 'attempts': 4, 'timeIncrement': 1e-35, 
+    'increment': 67, 'stepTime': 0.427804927531207, 'step': 1, 
+    'jobName': 'RCC_Column_capacity', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['RCC_Column_capacity']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'RCC_Column_capacity'})
+mdb.jobs['RCC_Column_capacity']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'RCC_Column_capacity'})
+# Save by raksh on 2022_09_19-15.49.04; build 6.14-1 2014_06_05-03.41.02 134264
